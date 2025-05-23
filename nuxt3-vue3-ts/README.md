@@ -13,13 +13,15 @@ Focus-Develop
 
 ## 🥢技术栈
 
-|                 框架                  |          说明          |   版本   |                             指南                              |
-|:-----------------------------------:|:--------------------:|:------:|:-----------------------------------------------------------:|
-|    [Nuxt3](https://nuxt.com.cn)     | 让基于 Vue.js 的全栈开发变得直观 | 3.17.1 | [文档](https://nuxt.com.cn/docs/getting-started/introduction) |
-| [Naive UI](https://www.naiveui.com) |      Vue 3 组件库       | 2.41.0 | [文档](https://www.naiveui.com/zh-CN/light/components/button) |
-|  [Pinia](https://www.naiveui.com)   |  符合直觉的 Vue.js 状态管理库  | 3.0.2  |     [文档](https://pinia.vuejs.org/zh/introduction.html)      |
-|    [Sass](https://sass-lang.com)    |     强化 CSS 的辅助工具     | 1.87.0 |              [文档](https://sass-lang.com/guide)              |
-| [Axios](https://www.axios-http.cn)  | 基于 promise 的网络请求库 | 1.9.0  |       [文档](https://www.axios-http.cn/docs/api_intro)        |
+|                      框架                      |            说明            |   版本   |                              指南                               |
+|:--------------------------------------------:|:------------------------:|:------:|:-------------------------------------------------------------:|
+|         [Nuxt3](https://nuxt.com.cn)         |   让基于 Vue.js 的全栈开发变得直观   | 3.17.1 |  [文档](https://nuxt.com.cn/docs/getting-started/introduction)  |
+|         [Vue3](https://cn.vuejs.org)         |    渐进式 JavaScript 框架     | 3.5.13 |      [文档](https://cn.vuejs.org/guide/introduction.html)       |
+| [TypeScript](https://www.typescriptlang.org) | 基于 JavaScript 构建的强类型编程语言 |   -    | [文档](https://www.typescriptlang.org/docs/handbook/intro.html) |
+|     [Naive UI](https://www.naiveui.com)      |        Vue 3 组件库         | 2.41.0 |  [文档](https://www.naiveui.com/zh-CN/light/components/button)  |
+|       [Pinia](https://www.naiveui.com)       |    符合直觉的 Vue.js 状态管理库    | 3.0.2  |      [文档](https://pinia.vuejs.org/zh/introduction.html)       |
+|        [Sass](https://sass-lang.com)         |       强化 CSS 的辅助工具       | 1.87.0 |               [文档](https://sass-lang.com/guide)               |
+|      [Axios](https://www.axios-http.cn)      |    基于 promise 的网络请求库     | 1.9.0  |        [文档](https://www.axios-http.cn/docs/api_intro)         |
 
 ## ☕运行配置
 
@@ -111,24 +113,23 @@ npm install pm2 -g
 
 ```js
 module.exports = {
-    apps: [
-        {
-            // 应用名称
-            name: 'focus-develop',
-            // 应用监听端口
-            port: '3000',
-            // 多进程模式
-            exec_mode: 'cluster',
-            instances: 'max',
-            // 注意这里的路径（当前配置文件是与构建产物".output"同级）
-            script: './.output/server/index.mjs'
-        }
-    ]
+  apps: [
+    {
+      // 应用名称
+      name: 'focus-develop',
+      // 应用监听端口
+      port: '3000',
+      // 多进程模式
+      exec_mode: 'cluster',
+      instances: 'max',
+      // 注意这里的路径（当前配置文件是与构建产物".output"同级）
+      script: './.output/server/index.mjs'
+    }
+  ]
 }
 ```
 
 - 启动应用
-
 
 ```bash
 pm2 start ecosystem.config.js
@@ -150,18 +151,18 @@ pm2 stop focus-develop
 
 ```markdown
 nuxt3-vue3-ts
-├── api    // 接口
-├── assets    // 资源（CSS、SASS、字体等）
-├── components    // 组件
-├── composables    // 组合式函数（自动导入到应用）
-├── middleware    // 路由中间件
-├── pages    // 页面
-├── plugins    // 插件
-├── public    // 静态资源
-├── util    // 工具类
-├── app.vue    // 根组件
-├── diy.d.ts    // 类型声明
-└── error.vue    // 错误页面
+├── api // 接口
+├── assets // 资源（CSS、SASS、字体等）
+├── components // 组件
+├── composables // 组合式函数（自动导入到应用）
+├── middleware // 路由中间件
+├── pages // 页面
+├── plugins // 插件
+├── public // 静态资源
+├── util // 工具类
+├── app.vue // 根组件
+├── diy.d.ts // 类型声明
+└── error.vue // 错误页面
 ```
 
 详情参考：[官网文档](https://nuxt.com.cn/docs/guide/directory-structure/nuxt/)
