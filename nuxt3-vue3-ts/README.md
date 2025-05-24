@@ -38,7 +38,8 @@ Focus-Develop
 ### 🏀下载项目
 
 ```bash
-git clone https://gitee.com/snihao/frame.git -b nuxt3-vue3-ts
+git clone --filter=blob:none --sparse https://gitee.com/snihao/focus-develop.git .
+git sparse-checkout set nuxt3-vue3-ts
 ```
 
 ### ⚽拉取依赖
@@ -60,7 +61,7 @@ bun install
 ### 🏓运行项目
 
 ```bash
-#nuxt
+# nuxt
 nuxt dev
 
 # npm
@@ -81,7 +82,7 @@ bun run dev
 ### 🏐构建项目
 
 ```bash
-#nuxt
+# nuxt
 nuxt build
 
 # npm
