@@ -11,7 +11,8 @@ export default defineNuxtConfig({
         transpile: [
             'vueuc',
             'naive-ui',
-            '@css-render/vue3-ssr']
+            '@css-render/vue3-ssr'
+        ]
     },
     modules: ['nuxtjs-naive-ui', '@pinia/nuxt'],
     css: ['~/assets/css/nh.scss'],
