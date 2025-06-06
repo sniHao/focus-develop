@@ -37,6 +37,8 @@ Focus-Develop
 
 ### 🏀下载项目
 
+注：git版本需要大于2.25以上才能使用以下命令(稀疏检出)，若小于此版本可以选择clone全部文件，手动选出所需要的项目文件。
+
 ```bash
 git clone --filter=blob:none --sparse https://gitee.com/snihao/focus-develop.git .
 git sparse-checkout set nuxt3-vue3-ts
