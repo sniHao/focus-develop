@@ -1,0 +1,30 @@
+spring:
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 1
+      password:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    hikari:
+      maximum-pool-size: 20  # 最大连接池大小
+      minimum-idle: 10         # 最小空闲连接数
+      idle-timeout: 30000     # 连接在池中的最大空闲时间，单位为毫秒
+      max-lifetime: 1800000   # 连接的最大生命周期，单位为毫秒
+      connection-timeout: 30000 # 从连接池获取连接的超时时间，单位为毫秒
+    url: jdbc:p6spy:mysql://localhost:3306/focus_admin?serverTimezone=GMT%2B8&allowMultiQueries=true
+    username: root
+    password: JZ8Qrd,ZlkPHs
+  elasticsearch:
+    uris: https://127.0.0.1:9200
+    username: elastic
+    password: dApslHx5kWWujPdkY3_n
+    ssl:
+      verification-mode: certificate  # 可选: none, certificate, full
+      certificate-authorities: es_key/http_ca.crt  # ES生成的CA证书路径
+
+logging:
+  level:
+    # 输出es的查询参数(调试用)
+    tracer: TRACE

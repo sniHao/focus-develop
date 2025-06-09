@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.focus</groupId>
+        <artifactId>focus-dependencies</artifactId>
+        <version>${revision}</version>
+        <relativePath>../focus-dependencies/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>focus-oauth</artifactId>
+    <packaging>pom</packaging>
+    <description>认证中心</description>
+
+    <modules>
+        <module>focus-oauth-startup</module>
+        <module>focus-oauth-api</module>
+        <module>focus-oauth-core</module>
+    </modules>
+
+</project>
