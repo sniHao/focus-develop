@@ -1,4 +1,4 @@
-package nh.focus.common.config;
+package com.focus.common.config;
 
 import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
@@ -28,15 +28,15 @@ public class ThreadPoolConfig {
     /**
      * 线程池名前缀
      */
-    private static final String THREAD_NAME_PREFIX = "nh-Async-";
+    private static final String THREAD_NAME_PREFIX = "focus-Async-";
 
     /**
      * 配置线程池
      *
      * @return r
      */
-    @Bean("taskExecutor")
-    public ThreadPoolTaskExecutor taskExecutor() {
+    @Bean("focusExecutor")
+    public ThreadPoolTaskExecutor focusExecutor() {
         ThreadPoolTaskExecutor threadPoolTaskExecutor = new ThreadPoolTaskExecutor();
         threadPoolTaskExecutor.setCorePoolSize(COUR_SIZE);// 设置核心线程数
         threadPoolTaskExecutor.setMaxPoolSize(MAX_COUR_SIZE);// 配置最大线程数

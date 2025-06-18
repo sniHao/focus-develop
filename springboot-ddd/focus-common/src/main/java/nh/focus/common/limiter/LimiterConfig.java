@@ -1,13 +1,11 @@
-package nh.focus.common.limiter;
+package com.focus.common.limiter;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.core.script.DefaultRedisScript;
 
 /**
- * @Description:限流配置类
- * @Author:xph
- * @Date: 2024/10/20 15:20
+ * 限流配置类
  */
 @Configuration
 public class LimiterConfig {

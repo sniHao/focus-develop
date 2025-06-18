@@ -1,4 +1,4 @@
-package nh.focus.common.limiter;
+package com.focus.common.limiter;
 
 
 public enum LimiterType {

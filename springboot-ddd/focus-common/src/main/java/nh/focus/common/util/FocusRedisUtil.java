@@ -1,4 +1,4 @@
-package nh.focus.common.util;
+package com.focus.common.util;
 
 import jakarta.annotation.Resource;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
  * @Date: 2025-04-23 15:45
  */
 @Component
-public class RedisUtil {
+public class FocusRedisUtil {
 
     @Resource
     private RedisTemplate<String, Object> redisTemplate;

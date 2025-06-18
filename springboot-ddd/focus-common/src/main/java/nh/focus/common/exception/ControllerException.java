@@ -1,6 +1,8 @@
-package nh.focus.common.exception;
+package com.focus.common.exception;
 
-import nh.focus.common.util.Result;
+import cn.dev33.satoken.exception.NotLoginException;
+import com.focus.common.constant.FocusResultCode;
+import com.focus.common.util.FocusResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -12,9 +14,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.Objects;
 
 /**
- * @Description:异常统一处理
- * @Author: ni_hao
- * @Date: 2025-04-23 15:44
+ * 异常统一处理
  */
 @ControllerAdvice
 public class ControllerException {
@@ -22,53 +22,50 @@ public class ControllerException {
 
     /**
      * 系统异常处理
-     *
-     * @param e
-     * @return
      */
     @ResponseBody
     @ExceptionHandler(value = Exception.class)
-    public Result<?> exceptionHandler(Exception e) {
+    public FocusResult<?> exceptionHandler(Exception e) {
         logger.error("系统异常:{}", e.getMessage(), e);
-        return Result.error("系统异常");
-    }
-
-    /**
-     * 参数校验异常
-     *
-     * @param e
-     * @return
-     */
-    @ResponseBody
-    @ExceptionHandler(value = MethodArgumentNotValidException.class)
-    public Result<?> methodExceptionHandler(MethodArgumentNotValidException e) {
-        return Result.error(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
+        return FocusResult.error("系统异常");
     }
 
     /**
      * 限流异常处理
-     *
-     * @param e
-     * @return
+     */
+    @ResponseBody
+    @ExceptionHandler(value = NotLoginException.class)
+    public FocusResult<?> notLoginExceptionHandler(NotLoginException e) {
+        return FocusResult.error(FocusResultCode.PERMISSION_EXCEPTION.code(), e.getMessage());
+    }
+
+    /**
+     * 参数校验异常
+     */
+    @ResponseBody
+    @ExceptionHandler(value = MethodArgumentNotValidException.class)
+    public FocusResult<?> methodExceptionHandler(MethodArgumentNotValidException e) {
+        return FocusResult.error(Objects.requireNonNull(e.getBindingResult().getFieldError()).getDefaultMessage());
+    }
+
+    /**
+     * 限流异常处理
      */
     @ResponseBody
     @ExceptionHandler(value = ResponseStatusException.class)
-    public Result<?> reExceptionHandler(ResponseStatusException e) {
-        return Result.error(e.getReason(), e.getStatusCode().toString());
+    public FocusResult<?> reExceptionHandler(ResponseStatusException e) {
+        return FocusResult.error(e.getReason(), e.getStatusCode().toString());
     }
 
     /**
      * 业务异常处理
-     *
-     * @param e
-     * @return
      */
     @ResponseBody
-    @ExceptionHandler(value = NhException.class)
-    public Result<?> nhExceptionHandler(NhException e) {
-        if (Objects.isNull(e.getCode())) return Result.error(e.getMsg());
+    @ExceptionHandler(value = FocusException.class)
+    public FocusResult<?> nhExceptionHandler(FocusException e) {
+        if (Objects.isNull(e.getCode())) return FocusResult.error(e.getMsg());
         logger.error("业务异常:{} , {}", e.getCode(), e.getMsg());
-        return Result.error(e.getMsg(), e.getCode());
+        return FocusResult.error(e.getMsg(), e.getCode());
     }
 
 }

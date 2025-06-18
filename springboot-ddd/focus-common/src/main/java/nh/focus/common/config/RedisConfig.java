@@ -1,4 +1,4 @@
-package nh.focus.common.config;
+package com.focus.common.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

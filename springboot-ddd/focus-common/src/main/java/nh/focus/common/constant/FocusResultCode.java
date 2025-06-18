@@ -1,11 +1,11 @@
-package nh.focus.common.constant;
+package com.focus.common.constant;
 
 /**
  * @Description:响应状态码
  * @Author: ni_hao
  * @Date: 2025-04-23 15:42
  */
-public enum ResultCode {
+public enum FocusResultCode {
     SUCCESS("成功", "200"),
     CLIENT_ERROR("客户端发生错误", "A0001"),
     USER_REGISTER_ERROR("用户注册错误", "A0100"),
@@ -26,7 +26,7 @@ public enum ResultCode {
     private final String tips;
     private final String code;
 
-    ResultCode(String tips, String code) {
+    FocusResultCode(String tips, String code) {
         this.tips = tips;
         this.code = code;
     }

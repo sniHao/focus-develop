@@ -1,9 +1,9 @@
-package nh.focus.common.limiter;
+package com.focus.common.limiter;
 
+import com.focus.common.constant.FocusResultCode;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import nh.focus.common.constant.ResultCode;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -22,9 +22,7 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * @Description:限流
- * @Author:xph
- * @Date: 2024/10/20 15:22
+ * 限流切面
  */
 @Slf4j
 @Aspect
@@ -35,29 +33,28 @@ public class RateLimiterAspect {
     private final RedisTemplate redisTemplate;
     private final RedisScript<Long> limitScript;
 
-    @Before("@annotation(rateLimiter)")
-    public void doBefore(JoinPoint point, RateLimiter rateLimiter) {
-        int time = rateLimiter.time();
-        int count = rateLimiter.count();
-        String combineKey = getCombineKey(rateLimiter, point);
+    @Before("@annotation(focusRateLimiter)")
+    public void doBefore(JoinPoint point, FocusRateLimiter focusRateLimiter) {
+        int time = focusRateLimiter.time();
+        int count = focusRateLimiter.count();
+        String combineKey = getCombineKey(focusRateLimiter, point);
         List<Object> keys = Collections.singletonList(combineKey);
         Long number = (Long) redisTemplate.execute(limitScript, keys, count, time);
         if (number.intValue() > count) {
-            throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, ResultCode.SYSTEM_OFTEN.tips());
+            throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, FocusResultCode.SYSTEM_OFTEN.tips());
         }
     }
 
     /**
+     * 获取IP或者其他限流方式
+     *
+     * @param focusRateLimiter 限流注解
+     * @param point       切入点
      * @return String
-     * @Description:获取IP或者其他限流方式
-     * @author: xph
-     * @param[1] rateLimiter
-     * @param[2] point
-     * @Date: 2024/10/20 15:45
      */
-    public String getCombineKey(RateLimiter rateLimiter, JoinPoint point) {
-        StringBuilder stringBuilder = new StringBuilder(rateLimiter.key());
-        if (rateLimiter.limitType() == LimiterType.IP) {
+    public String getCombineKey(FocusRateLimiter focusRateLimiter, JoinPoint point) {
+        StringBuilder stringBuilder = new StringBuilder(focusRateLimiter.key());
+        if (focusRateLimiter.limitType() == LimiterType.IP) {
             ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             String ip = getIp(attributes.getRequest());
             if (!Objects.isNull(ip)) stringBuilder.append(ip);

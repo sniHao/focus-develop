@@ -1,16 +1,14 @@
-package nh.focus.common.limiter;
+package com.focus.common.limiter;
 
 import java.lang.annotation.*;
 
 /**
- * @Description:限流注解类
- * @Author:xph
- * @Date: 2024/10/20 15:21
+ * 限流注解类
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-public @interface RateLimiter {
+public @interface FocusRateLimiter {
     /**
      * 限流key
      */
