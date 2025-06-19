@@ -1,6 +1,12 @@
 # <p align="center"><img src="./资源/logo.png" width="200"></p>
 
-<h1 align="center">👋focus-develop <专注开发></h1>
+<h1 align="center" 
+style="background: linear-gradient(170deg, #0289F4, #00FCAA 85%, #0289F4 100%);   
+-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;">focus-develop <专注开发>
+</h1>
 
 <p align="center">English | <a href="README.md">中文</a></p>
 
