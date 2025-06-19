@@ -1,6 +1,8 @@
-# <p align="center">![focus-develop](./资源/logo.png)</p>
+# <p align="center"><img src="./资源/logo.png" width="200"></p>
 
 <h1 align="center">👋focus-develop <专注开发></h1>
+
+<p align="center"><a href="README-en.md">English</a> | 中文</p>
 
 Focus-Develop
 是一套多语言、多场景覆盖的开源项目集合，旨在为开发者提供“开箱即用”的项目框架与工具，帮助用户跳过繁琐的基础搭建环节，快速进入核心业务逻辑开发。其核心设计理念是​​极简主义​​与​​模块化​​，通过分层架构、标准化协议和灵活的扩展机制，适配云端、移动端、微服务等主流开发场景，同时兼容多种编程语言和工具链。
