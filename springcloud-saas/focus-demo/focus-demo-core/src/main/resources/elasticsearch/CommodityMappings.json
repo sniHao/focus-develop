@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "name": {
+      "type": "semantic_text",
+      "inference_id": "text-embedding-v1"
+    },
+    "classification": {
+      "type": "keyword"
+    }
+  }
+}

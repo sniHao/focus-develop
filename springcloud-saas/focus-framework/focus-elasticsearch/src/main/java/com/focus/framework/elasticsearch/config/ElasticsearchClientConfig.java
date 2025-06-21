@@ -4,6 +4,7 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.json.jackson.JacksonJsonpMapper;
 import co.elastic.clients.transport.ElasticsearchTransport;
 import co.elastic.clients.transport.rest_client.RestClientTransport;
+import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.http.HttpHost;
@@ -14,10 +15,12 @@ import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.elasticsearch.client.RestClient;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.elasticsearch.repository.config.EnableElasticsearchRepositories;
+import org.springframework.stereotype.Component;
 
 import javax.net.ssl.SSLContext;
 import java.io.InputStream;
@@ -83,4 +86,41 @@ public class ElasticsearchClientConfig {
     public ElasticsearchClient elasticsearchClient(ElasticsearchTransport transport) {
         return new ElasticsearchClient(transport);
     }
+}
+
+@Data
+@Component
+@ConfigurationProperties(prefix = "spring.elasticsearch")
+class ElasticsearchConfig {
+    /**
+     * Elasticsearch 集群地址，多个地址用逗号分隔
+     */
+    private String uris;
+
+    /**
+     * Elasticsearch 用户名
+     */
+    private String username;
+
+    /**
+     * Elasticsearch 密码
+     */
+    private String password;
+
+}
+
+@Data
+@Component
+@ConfigurationProperties(prefix = "spring.elasticsearch.ssl")
+class ElasticsearchSslConfig {
+    /**
+     * 验证模式
+     */
+    private String verificationMode;
+
+    /**
+     * Elasticsearch SSL 证书路径
+     */
+    private String certificateAuthorities;
+
 }
