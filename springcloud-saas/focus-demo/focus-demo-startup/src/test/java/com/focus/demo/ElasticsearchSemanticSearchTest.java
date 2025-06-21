@@ -114,8 +114,8 @@ public class ElasticsearchSemanticSearchTest {
     @Test
     void elasticsearchModelServiceTest() {
         //申请许可证
-        String startTrial = elasticsearchModelService.startTrial();
-        System.out.println(startTrial);
+//        String startTrial = elasticsearchModelService.startTrial();
+//        System.out.println(startTrial);
 
         //绑定模型
         String bindAliEmbeddingModel = elasticsearchModelService.bindAliEmbeddingModel();

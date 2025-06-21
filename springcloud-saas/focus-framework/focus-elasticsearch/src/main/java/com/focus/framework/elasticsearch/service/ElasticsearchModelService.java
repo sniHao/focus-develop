@@ -59,7 +59,8 @@ public class ElasticsearchModelService {
                 alibabaVectorConfig.getServiceName(),
                 alibabaVectorConfig.getApiKey(),
                 alibabaVectorConfig.getServiceId(),
-                alibabaVectorConfig.getHost());
+                alibabaVectorConfig.getHost(),
+                alibabaVectorConfig.getWorkspace());
 
         request.setJsonEntity(jsonBody);
         Response response = restClient.performRequest(request);
@@ -121,5 +122,9 @@ class AlibabaVectorConfig {
      * 外网地址
      */
     private String host = "default-4o7x.platform-cn-shanghai.opensearch.aliyuncs.com";
+    /**
+     * 工作空间
+     */
+    private String workspace = "default";
 
 }
