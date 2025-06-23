@@ -1,4 +1,6 @@
-# <p align="center"><img align="middle" src="./资源/logo.png" width="140">&nbsp;&nbsp;<font size="7">focus-develop <专注开发></font></p>
+# <p align="center"><img align="middle" src="./资源/logo.png" width="150">
+
+<h1 align="center">focus-develop <专注开发></h1>
 
 <p align="center"><a href="README-en.md">English</a> | 中文</p>
 
