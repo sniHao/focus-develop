@@ -2,8 +2,8 @@ package com.focus.demo;
 
 import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.InfoResponse;
-import com.focus.demo.core.domain.entity.ElasticTest;
-import com.focus.demo.core.repository.es.ElasticTestRepository;
+import com.focus.demo.core.domain.entity.ElasticPoetry;
+import com.focus.demo.core.repository.elasticsearch.ElasticTestRepository;
 import com.focus.demo.startup.FocusDemoStartupApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,8 @@ import java.io.IOException;
  * @create 2025/6/7 14:48
  */
 @SpringBootTest(classes = FocusDemoStartupApplication.class)
-public class TestElasticTest {
+public class TestElasticPoetry {
+
     @Autowired
     private ElasticTestRepository elasticTestRepository;
     @Autowired
@@ -39,17 +40,15 @@ public class TestElasticTest {
 
     @Test
     void saveProduct() {
-        ElasticTest elasticTest = new ElasticTest();
-        elasticTest.setId("1");
-        elasticTest.setName("紫薇");
-        ElasticTest save = elasticTestRepository.save(elasticTest);
+        ElasticPoetry elasticPoetry = new ElasticPoetry();
+        ElasticPoetry save = elasticTestRepository.save(elasticPoetry);
         System.out.println(save);
     }
 
     @Test
     void findById() {
-        ElasticTest elasticTest = elasticTestRepository.findById("1").orElse(null);
-        System.out.println(elasticTest);
+        ElasticPoetry elasticPoetry = elasticTestRepository.findById("1").orElse(null);
+        System.out.println(elasticPoetry);
     }
 
 }
