@@ -2,6 +2,21 @@
 
 <h1 align="center">focus-develop <专注开发></h1>
 
+<div align="center">
+  <a href="https://github.com/sniHao/focus-develop">
+    <img src="https://img.shields.io/github/stars/sniHao/focus-develop?style=for-the-badge&logo=github&label=GitHub%20Stars" alt="GitHub Stars">
+  </a>
+  <a href="https://gitee.com/snihao/focus-develop">
+    <img src="https://gitee.com/snihao/focus-develop/badge/star.svg?theme=dark&style=for-the-badge" alt="Gitee Stars">
+  </a>
+  <a href="https://github.com/sniHao/focus-develop/releases">
+    <img src="https://img.shields.io/github/v/release/sniHao/focus-develop?style=for-the-badge&logo=github" alt="Release">
+  </a>
+  <a href="https://github.com/sniHao/focus-develop/issues">
+    <img src="https://img.shields.io/github/issues/sniHao/focus-develop?style=for-the-badge&color=blue" alt="Issues">
+  </a>
+</div>
+
 <p align="center">English | <a href="README.md">中文</a></p>
 
 Focus-Develop
@@ -14,3 +29,34 @@ languages and toolchains.
 
 ***"Focus-Develop It is not only a collection of tools, but also the practice of the development concept - to bring
 technology back to the essence of business."***
+
+## ✨ Core characteristics
+
+- **Multi-technology stack integration** : Covering the mainstream technology frameworks of both the front-end and
+  back-end
+- **Standardized Architecture** : Unify the project structure norms and best practices
+- **Modular design** : Combine functional modules as needed to avoid redundant code
+- **Zero-configuration startup** : Built-in basic dependencies and toolchain, ready to use out of the box
+- **Cloud-native support** : Natively adapted to containerized deployment and microservice architecture
+
+## 🧩 List of integrated frameworks
+
+The following table lists the currently implemented framework systems, which are continuously expanding:
+
+| Framework Module     | Core Features                                                              | Applicable Scenarios                                                    |
+|----------------------|----------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| **nuxt3-vue3-ts**    | SSR/SSG support, automatic API routing, strong type checking               | High-performance SEO-friendly Web application                           |
+| **springboot-ddd**   | Domain-driven Design, Event Traceability, Hexagonal Architecture           | Complex Business System/Domain Model Project                            |
+| **springboot-ssm**   | Annotated CRUD, multi-data source support, lightweight transaction control | Traditional enterprise-level background management system/Basic project |
+| **springcloud-saas** | Multi-tenant isolation, service mesh, Distributed Configuration Center     | SaaS Cloud Platform/Microservice cluster                                |
+
+> 💡 Framework continuous expansion plan: uni-app+uView, Next.js+React, etc.
+
+## 🤝 Join the community
+
+**Recommended contribution path**：
+
+1. Submit an Issue to report problems or suggestions
+2. Claim the development task
+3. Submit PR (in accordance with [Git specifications])
+4. Become a core maintainer 🔥
