@@ -4,16 +4,10 @@
 
 <div align="center">
   <a href="https://github.com/sniHao/focus-develop">
-    <img src="https://img.shields.io/github/stars/sniHao/focus-develop?style=for-the-badge&logo=github&label=GitHub%20Stars" alt="GitHub Stars">
+    <img src="https://img.shields.io/github/stars/sniHao/focus-develop?logo=github" alt="GitHub Stars">
   </a>
   <a href="https://gitee.com/snihao/focus-develop">
     <img src="https://gitee.com/snihao/focus-develop/badge/star.svg?theme=dark&style=for-the-badge" alt="Gitee Stars">
-  </a>
-  <a href="https://github.com/sniHao/focus-develop/releases">
-    <img src="https://img.shields.io/github/v/release/sniHao/focus-develop?style=for-the-badge&logo=github" alt="Release">
-  </a>
-  <a href="https://github.com/sniHao/focus-develop/issues">
-    <img src="https://img.shields.io/github/issues/sniHao/focus-develop?style=for-the-badge&color=blue" alt="Issues">
   </a>
 </div>
 
