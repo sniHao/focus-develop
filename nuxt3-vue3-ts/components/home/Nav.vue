@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h1>你好~👋</h1>
+    <h1 class="text-3xl font-bold text-center">你好~👋</h1>
     <n-button type="primary" dashed @click="switchTheme(null)">
       白天
     </n-button>
-    <span class="ml-10 mr-10" :class="themeClass('ft-color')">不懂</span>
+    <span class="ml-[10px] mr-[10px]" :class="themeClass('ft-color')">不懂</span>
     <n-button type="info" dashed @click="switchTheme(darkTheme)">
       夜的黑
     </n-button>

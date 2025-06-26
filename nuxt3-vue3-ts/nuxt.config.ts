@@ -14,8 +14,14 @@ export default defineNuxtConfig({
             '@css-render/vue3-ssr'
         ]
     },
+    postcss: {
+        plugins: {
+            '@tailwindcss/postcss': {},
+            autoprefixer: {},
+        },
+    },
     modules: ['nuxtjs-naive-ui', '@pinia/nuxt'],
-    css: ['~/assets/css/nh.scss'],
+    css: ['~/assets/css/tailwind.scss'],
     $production: {
         // @ts-ignore
         routeRules: {

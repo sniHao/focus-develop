@@ -5,7 +5,8 @@ Focus-Develop
 
 ***"Focus-Develop 不仅是工具集合，更是开发理念的实践——让技术回归业务本质。"***
 
-**开源地址**：[GitHub](https://gitee.com/snihao/focus-develop) &nbsp;&nbsp;&nbsp;[Gitee](https://gitee.com/snihao/focus-develop)
+**开源地址**：[GitHub](https://gitee.com/snihao/focus-develop)
+&nbsp;&nbsp;&nbsp;[Gitee](https://gitee.com/snihao/focus-develop)
 
 # 🥪nuxt3-vue3-ts
 
@@ -22,6 +23,7 @@ Focus-Develop
 | [TypeScript](https://www.typescriptlang.org) | 基于 JavaScript 构建的强类型编程语言 |   -    | [文档](https://www.typescriptlang.org/docs/handbook/intro.html) |
 |     [Naive UI](https://www.naiveui.com)      |        Vue 3 组件库         | 2.41.0 |  [文档](https://www.naiveui.com/zh-CN/light/components/button)  |
 |       [Pinia](https://www.naiveui.com)       |    符合直觉的 Vue.js 状态管理库    | 3.0.2  |      [文档](https://pinia.vuejs.org/zh/introduction.html)       |
+|    [tailwindcss](https://tailwindcss.com)    |   快速建立现代网站，而不离开你的HTML    | 4.1.10 |  [文档](https://tailwindcss.com/docs/installation/using-vite)   |
 |        [Sass](https://sass-lang.com)         |       强化 CSS 的辅助工具       | 1.87.0 |               [文档](https://sass-lang.com/guide)               |
 |      [Axios](https://www.axios-http.cn)      |    基于 promise 的网络请求库     | 1.9.0  |        [文档](https://www.axios-http.cn/docs/api_intro)         |
 
@@ -118,19 +120,19 @@ npm install pm2 -g
 
 ```js
 module.exports = {
-  apps: [
-    {
-      // 应用名称
-      name: 'focus-develop',
-      // 应用监听端口
-      port: '3000',
-      // 多进程模式
-      exec_mode: 'cluster',
-      instances: 'max',
-      // 注意这里的路径（当前配置文件是与构建产物".output"同级）
-      script: './.output/server/index.mjs'
-    }
-  ]
+    apps: [
+        {
+            // 应用名称
+            name: 'focus-develop',
+            // 应用监听端口
+            port: '3000',
+            // 多进程模式
+            exec_mode: 'cluster',
+            instances: 'max',
+            // 注意这里的路径（当前配置文件是与构建产物".output"同级）
+            script: './.output/server/index.mjs'
+        }
+    ]
 }
 ```
 
