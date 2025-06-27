@@ -27,5 +27,5 @@ public @interface FocusRateLimiter {
     /**
      * 限流类型
      */
-    LimiterType limitType() default LimiterType.DEFAULT;
+    LimiterType limitType() default LimiterType.IP;
 }
