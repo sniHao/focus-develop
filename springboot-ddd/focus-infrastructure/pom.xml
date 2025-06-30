@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>nh.focus</groupId>
-        <artifactId>focus-develop-ddd</artifactId>
+        <groupId>com.focus</groupId>
+        <artifactId>springboot-ddd</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>nh.focus.infrastructure</groupId>
+    <groupId>com.focus.infrastructure</groupId>
     <artifactId>focus-infrastructure</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>focus-infrastructure</name>
@@ -30,14 +30,13 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>nh.focus.domain</groupId>
+            <groupId>com.focus.domain</groupId>
             <artifactId>focus-domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
     <build>
-        <finalName>notes-something-common</finalName>
+        <finalName>notes-something-infrastructure</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
