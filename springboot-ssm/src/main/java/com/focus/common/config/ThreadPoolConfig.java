@@ -1,7 +1,7 @@
 package com.focus.common.config;
 
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 
@@ -12,7 +12,7 @@ import java.util.concurrent.ThreadPoolExecutor;
  * @Author: ni_hao
  * @Date: 2025-04-23 15:40
  */
-@Configurable
+@Configuration
 @EnableAsync
 public class ThreadPoolConfig {
     /**
