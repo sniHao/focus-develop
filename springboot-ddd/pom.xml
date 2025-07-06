@@ -15,7 +15,6 @@
 	<description>springboot-ddd</description>
 	<packaging>pom</packaging>
 	<modules>
-		<module>focus-common</module>
 		<module>focus-api</module>
 		<module>focus-application</module>
 		<module>focus-domain</module>

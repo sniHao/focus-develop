@@ -28,6 +28,13 @@
 	<properties>
 		<java.version>17</java.version>
 	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>com.focus.domain</groupId>
+			<artifactId>focus-domain</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<finalName>notes-something-application</finalName>
 		<plugins>

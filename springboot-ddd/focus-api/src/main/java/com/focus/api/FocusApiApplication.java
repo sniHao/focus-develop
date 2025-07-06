@@ -5,11 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.focus.api", "com.focus.common", "com.focus.application"})
+@ComponentScan(basePackages = {"com.focus.api", "com.focus.application", "com.focus.domain", "com.focus.infrastructure"})
 public class FocusApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(FocusApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(FocusApiApplication.class, args);
+    }
 
 }
