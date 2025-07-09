@@ -64,7 +64,9 @@ public class ControllerException {
     @ExceptionHandler(value = FocusException.class)
     public FocusResult<?> nhExceptionHandler(FocusException e) {
         if (Objects.isNull(e.getCode())) return FocusResult.error(e.getMsg());
-        logger.error("业务异常:{} , {}", e.getCode(), e.getMsg());
+        StackTraceElement element = e.getStackTrace()[0];
+        String methodPath = element.getClassName() + "." + element.getMethodName();
+        logger.error("业务异常[发生在{}]: {} , {}", methodPath, e.getCode(), e.getMsg());
         return FocusResult.error(e.getMsg(), e.getCode());
     }
 
