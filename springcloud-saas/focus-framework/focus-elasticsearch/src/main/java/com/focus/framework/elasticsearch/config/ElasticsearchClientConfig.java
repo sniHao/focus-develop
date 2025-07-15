@@ -15,6 +15,7 @@ import org.apache.http.conn.ssl.NoopHostnameVerifier;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.ssl.SSLContextBuilder;
 import org.elasticsearch.client.RestClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +33,7 @@ import java.util.Arrays;
 @Slf4j
 @RequiredArgsConstructor
 @Configuration
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 @EnableElasticsearchRepositories(basePackages = "com.focus") //包扫描路径
 public class ElasticsearchClientConfig {
 
@@ -90,6 +92,7 @@ public class ElasticsearchClientConfig {
 
 @Data
 @Component
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 @ConfigurationProperties(prefix = "spring.elasticsearch")
 class ElasticsearchConfig {
     /**
@@ -111,6 +114,7 @@ class ElasticsearchConfig {
 
 @Data
 @Component
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 @ConfigurationProperties(prefix = "spring.elasticsearch.ssl")
 class ElasticsearchSslConfig {
     /**

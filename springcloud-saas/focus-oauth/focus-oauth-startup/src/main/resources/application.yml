@@ -3,9 +3,29 @@ server:
 
 spring:
   application:
-  name: focus-oauth-startup
+    name: focus-oauth-startup
   profiles:
     active: @profiles.active@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        enabled: true
+
+# Dubbo 配置
+dubbo:
+  application:
+    name: focus-oauth-startup
+  registry:
+    address: nacos://127.0.0.1:8848
+  protocol:
+    name: dubbo
+    port: 20880
+  consumer:
+    timeout: 3000
+    retries: 0
 
 mybatis-plus:
   # 多包名使用

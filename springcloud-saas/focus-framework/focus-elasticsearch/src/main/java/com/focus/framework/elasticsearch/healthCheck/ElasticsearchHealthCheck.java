@@ -4,12 +4,14 @@ import co.elastic.clients.elasticsearch.ElasticsearchClient;
 import co.elastic.clients.elasticsearch.core.InfoResponse;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 /**
  * 测试连接es
  */
 @Component
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 @Slf4j
 public class ElasticsearchHealthCheck {
 

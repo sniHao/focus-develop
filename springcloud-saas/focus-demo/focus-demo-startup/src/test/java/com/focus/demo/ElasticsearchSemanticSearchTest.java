@@ -12,14 +12,19 @@ import com.focus.demo.core.domain.entity.CommodityDocument;
 import com.focus.demo.core.repository.elasticsearch.CommodityDocumentRepository;
 import com.focus.demo.startup.FocusDemoStartupApplication;
 import com.focus.framework.elasticsearch.service.ElasticsearchModelService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 /**
@@ -129,5 +134,39 @@ public class ElasticsearchSemanticSearchTest {
 //        String deleteEmbeddingModel = elasticsearchModelService.deleteEmbeddingModel();
 //        System.out.println(deleteEmbeddingModel);
 
+    }
+
+    public static void main(String[] args) {
+        List<parallelStreamDto> list = new ArrayList<>();
+        Integer size = 1000000;
+        for (int i = 0; i < size; i++) {
+            list.add(new parallelStreamDto("name" + i, i));
+        }
+
+        long startTime = System.currentTimeMillis();
+        List<parallelStreamDto> streamList = list.stream().filter(item -> item.getAge() > size / 2 && item.getAge() < size - 100).map(item -> {
+            item.setAge(item.getAge() + 100 / 20 * 34);
+            item.setName(item.getName() + "----");
+            return item;
+        }).collect(Collectors.toList());
+        long endTime = System.currentTimeMillis();
+        System.out.println("Stream 执行时间: " + (endTime - startTime) + " 毫秒" + streamList.size());
+
+        long startTime2 = System.currentTimeMillis();
+        List<parallelStreamDto> parallelStreamList = list.parallelStream().filter(item -> item.getAge() > size / 2 && item.getAge() < size - 100).map(item -> {
+            item.setAge(item.getAge() + 100 / 20 * 34);
+            item.setName(item.getName() + "----");
+            return item;
+        }).collect(Collectors.toList());
+        long endTime2 = System.currentTimeMillis();
+        System.out.println("ParallelStream 执行时间: " + (endTime2 - startTime2) + " 毫秒" + parallelStreamList.size());
+    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class parallelStreamDto {
+        private String name;
+        private Integer age;
     }
 }

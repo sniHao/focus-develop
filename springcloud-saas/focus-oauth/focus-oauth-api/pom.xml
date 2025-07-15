@@ -13,9 +13,23 @@
     <description>认证中心APi</description>
 
     <dependencies>
+        <!-- 依赖 core 模块 -->
         <dependency>
             <groupId>com.focus</groupId>
             <artifactId>focus-oauth-core</artifactId>
+        </dependency>
+        
+        <!-- 用于远程调用focus-basedata -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-basedata-api</artifactId>
+        </dependency>
+        
+        <!-- Spring Web（API接口需要） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

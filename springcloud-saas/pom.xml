@@ -11,6 +11,7 @@
         <module>focus-dependencies</module>
         <module>focus-framework</module>
         <module>focus-oauth</module>
+        <module>focus-basedata</module>
         <module>focus-demo</module>
     </modules>
 

@@ -7,6 +7,7 @@ import org.apache.http.util.EntityUtils;
 import org.elasticsearch.client.Request;
 import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,7 @@ import java.io.IOException;
  * @author zi-wei
  */
 @RequiredArgsConstructor
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 @Service
 public class ElasticsearchModelService {
 
@@ -97,6 +99,7 @@ public class ElasticsearchModelService {
 
 @Data
 @Component
+@ConditionalOnProperty(prefix = "spring.elasticsearch", name = "enabled", havingValue = "true", matchIfMissing = false)
 class AlibabaVectorConfig {
     /**
      * 服务名

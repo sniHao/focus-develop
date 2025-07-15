@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.focus</groupId>
+        <artifactId>focus-dependencies</artifactId>
+        <version>${revision}</version>
+        <relativePath>../../focus-dependencies/pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>focus-basedata-api</artifactId>
+    <packaging>jar</packaging>
+    <description>基础数据中心API</description>
+
+    <dependencies>
+        <!-- 依赖 core 模块 -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-basedata-core</artifactId>
+        </dependency>
+        
+        <!-- Dubbo -->
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+        </dependency>
+        
+        <!-- Spring Boot Starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        
+
+    </dependencies>
+
+</project>
