@@ -13,22 +13,31 @@
     <description>认证中心APi</description>
 
     <dependencies>
-        <!-- 依赖 core 模块 -->
+        <!-- Dubbo (API接口需要) -->
         <dependency>
-            <groupId>com.focus</groupId>
-            <artifactId>focus-oauth-core</artifactId>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <scope>provided</scope>
         </dependency>
         
-        <!-- 用于远程调用focus-basedata -->
+        <!-- Spring Framework 基础依赖 -->
         <dependency>
-            <groupId>com.focus</groupId>
-            <artifactId>focus-basedata-api</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <scope>provided</scope>
         </dependency>
         
-        <!-- Spring Web（API接口需要） -->
+        <!-- Lombok -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
             <scope>provided</scope>
         </dependency>
     </dependencies>

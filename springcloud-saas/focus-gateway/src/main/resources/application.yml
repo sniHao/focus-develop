@@ -1,0 +1,62 @@
+server:
+  port: 10010
+
+spring:
+  application:
+    name: focus-gateway
+  profiles:
+    active: @profiles.active@
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        # OAuth 服务路由
+        - id: focus-oauth-route
+          uri: lb://focus-oauth-startup
+          predicates:
+            - Path=/focus-oauth/**
+          filters:
+            - StripPrefix=1
+
+        # BaseData 服务路由
+        - id: focus-basedata-route
+          uri: lb://focus-basedata-startup
+          predicates:
+            - Path=/focus-basedata/**
+          filters:
+            - StripPrefix=1
+
+        # Demo 服务路由
+        - id: focus-demo-route
+          uri: lb://focus-demo-startup
+          predicates:
+            - Path=/focus-demo/**
+          filters:
+            - StripPrefix=1
+
+# 日志配置
+logging:
+  level:
+    com.focus.gateway: INFO
+    org.springframework.cloud.gateway: INFO
+  pattern:
+    console: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level [%class{36}:%line] - %msg%n'
+
+# 管理端点配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+  endpoint:
+    health:
+      show-details: always

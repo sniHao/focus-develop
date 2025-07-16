@@ -10,30 +10,30 @@ import java.util.List;
 
 /**
  * 基础数据控制器 - Web业务
- * 
+ *
  * @author zi-wei
  * @create 2025/1/8
  */
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/basedata")
+@RequestMapping("/focus-basedata")
 public class BaseDataController {
-    
+
     private final BaseDataApplicationService baseDataApplicationService;
-    
+
     /**
      * 获取所有基础数据
-     * 
+     *
      * @return 基础数据列表
      */
     @GetMapping("/all")
     public List<BaseDataVo> getAllBaseData() {
         return baseDataApplicationService.getAllBaseData();
     }
-    
+
     /**
      * 根据类型获取基础数据
-     * 
+     *
      * @param type 数据类型
      * @return 基础数据列表
      */
@@ -41,10 +41,10 @@ public class BaseDataController {
     public List<BaseDataVo> getBaseDataByType(@PathVariable String type) {
         return baseDataApplicationService.getBaseDataByType(type);
     }
-    
+
     /**
      * 创建基础数据
-     * 
+     *
      * @param req 基础数据请求
      * @return 创建结果
      */
@@ -52,10 +52,10 @@ public class BaseDataController {
     public String createBaseData(@RequestBody BaseDataReq req) {
         return baseDataApplicationService.createBaseData(req);
     }
-    
+
     /**
      * 更新基础数据
-     * 
+     *
      * @param id 数据ID
      * @param req 基础数据请求
      * @return 更新结果
@@ -64,10 +64,10 @@ public class BaseDataController {
     public String updateBaseData(@PathVariable Long id, @RequestBody BaseDataReq req) {
         return baseDataApplicationService.updateBaseData(id, req);
     }
-    
+
     /**
      * 删除基础数据
-     * 
+     *
      * @param id 数据ID
      * @return 删除结果
      */
@@ -75,14 +75,14 @@ public class BaseDataController {
     public String deleteBaseData(@PathVariable Long id) {
         return baseDataApplicationService.deleteBaseData(id);
     }
-    
+
     /**
      * 健康检查
-     * 
+     *
      * @return 结果
      */
     @GetMapping("/health")
     public String health() {
         return "基础数据服务运行正常";
     }
-} 
+}

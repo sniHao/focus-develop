@@ -1,0 +1,26 @@
+# 开发环境配置
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOriginPatterns: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
+            maxAge: 3600
+
+# 日志配置
+logging:
+  level:
+    root: INFO
+    com.focus.gateway: INFO
+    org.springframework.cloud.gateway: INFO
+  file:
+    path: ./logs/focus-gateway

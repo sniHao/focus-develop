@@ -247,6 +247,12 @@
                 <artifactId>focus-basedata-core</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.focus</groupId>
+                <artifactId>focus-gateway</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

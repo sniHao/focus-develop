@@ -29,6 +29,12 @@
             <artifactId>focus-mybatis-plus</artifactId>
         </dependency>
         
+        <!-- 依赖自己的 api 模块 -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-oauth-api</artifactId>
+        </dependency>
+        
         <!-- 用于远程调用focus-basedata -->
         <dependency>
             <groupId>com.focus</groupId>

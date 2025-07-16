@@ -1,4 +1,4 @@
-package com.focus.basedata.api.dto;
+package com.focus.oauth.api.dto;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;
@@ -61,11 +61,6 @@ public class UserInfoDTO implements Serializable {
     private Integer status;
     
     /**
-     * 最后登录时间
-     */
-    private LocalDateTime lastLoginTime;
-    
-    /**
      * 创建时间
      */
     private LocalDateTime createTime;
@@ -74,4 +69,9 @@ public class UserInfoDTO implements Serializable {
      * 更新时间
      */
     private LocalDateTime updateTime;
+    
+    /**
+     * 最后登录时间
+     */
+    private LocalDateTime lastLoginTime;
 } 

@@ -1,4 +1,4 @@
-package com.focus.basedata.api.dto;
+package com.focus.oauth.api.dto;
 
 import lombok.Data;
 import lombok.AllArgsConstructor;

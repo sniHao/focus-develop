@@ -5,24 +5,19 @@
         <groupId>com.focus</groupId>
         <artifactId>focus-dependencies</artifactId>
         <version>${revision}</version>
-        <relativePath>../../focus-dependencies/pom.xml</relativePath>
+        <relativePath>../focus-dependencies/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <packaging>jar</packaging>
-    <artifactId>focus-oauth-startup</artifactId>
-    <description>认证中心启动服务</description>
+    <artifactId>focus-gateway</artifactId>
+    <description>Focus Gateway - API网关服务</description>
 
     <dependencies>
+        <!-- Spring Cloud Gateway -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
 
         <!-- Nacos服务发现 -->
@@ -31,37 +26,33 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
-        <!-- Dubbo -->
+        <!-- Spring Cloud LoadBalancer -->
         <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-spring-boot-starter</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
 
-        <!-- Dubbo Nacos注册中心 -->
-        <dependency>
-            <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-registry-nacos</artifactId>
-        </dependency>
-
+        <!-- Focus Framework Core -->
         <dependency>
             <groupId>com.focus</groupId>
-            <artifactId>focus-oauth-api</artifactId>
+            <artifactId>focus-core</artifactId>
         </dependency>
 
+        <!-- Spring Boot Test -->
         <dependency>
-            <groupId>com.focus</groupId>
-            <artifactId>focus-oauth-core</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
-    <!--    环境配置-->
+    <!-- 环境配置 -->
     <profiles>
         <profile>
             <id>dev</id>
             <properties>
                 <profiles.active>dev</profiles.active>
             </properties>
-
             <activation>
                 <!-- 默认环境 -->
                 <activeByDefault>true</activeByDefault>
@@ -81,7 +72,7 @@
         </profile>
     </profiles>
 
-    <!--    打包配置-->
+    <!-- 打包配置 -->
     <build>
         <plugins>
             <plugin>
@@ -96,8 +87,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.focus.oauth.startup.FocusOauthStartupApplication</mainClass>
-                    <!--                    继承父 pom.xml的环境配置-->
+                    <mainClass>com.focus.gateway.FocusGatewayApplication</mainClass>
+                    <!-- 继承父 pom.xml的环境配置 -->
                     <systemPropertyVariables>
                         <profiles.active>${profiles.active}</profiles.active>
                     </systemPropertyVariables>
@@ -115,7 +106,7 @@
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
-                <!--不开启过滤，即无需进行参数替换的文件-->
+                <!-- 不开启过滤，即无需进行参数替换的文件 -->
                 <filtering>false</filtering>
                 <includes>
                     <include>**/*.*</include>
@@ -123,7 +114,7 @@
             </resource>
             <resource>
                 <directory>src/main/resources</directory>
-                <!--开启过滤，用指定的参数替换directory下的文件中的参数，如application.yml中的@active@-->
+                <!-- 开启过滤，用指定的参数替换directory下的文件中的参数，如application.yml中的@profiles.active@ -->
                 <filtering>true</filtering>
                 <includes>
                     <include>**/*.yml</include>

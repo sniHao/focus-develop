@@ -28,9 +28,13 @@
             <groupId>com.focus</groupId>
             <artifactId>focus-mybatis-plus</artifactId>
         </dependency>
-        
 
-        
+        <!-- 依赖 focus-oauth-api 来实现远程服务接口 -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-oauth-api</artifactId>
+        </dependency>
+
         <!-- Dubbo -->
         <dependency>
             <groupId>org.apache.dubbo</groupId>
@@ -39,4 +43,4 @@
 
     </dependencies>
 
-</project> 
+</project>
