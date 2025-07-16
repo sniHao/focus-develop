@@ -4,7 +4,7 @@
 
 ## 项目概述
 
-Focus SpringCloud SaaS 是一个采用微服务架构的企业级应用平台，整合了 Spring Cloud 生态和 Apache Dubbo RPC 框架，提供完整的服务治理、网关路由、认证授权等功能。
+Focus Spring-cloud-alibaba 是一个采用微服务架构的企业级应用平台，整合了 Spring Cloud 生态和 Apache Dubbo RPC 框架，提供完整的服务治理、网关路由、认证授权等功能。
 
 ## 架构设计
 
@@ -24,7 +24,7 @@ Focus SpringCloud SaaS 是一个采用微服务架构的企业级应用平台，
 ## 模块架构
 
 ```
-springcloud-saas/
+Spring-cloud-alibaba/
 ├── focus-dependencies/           # 依赖管理
 ├── focus-framework/             # 框架核心模块
 │   ├── focus-core/             # 核心组件
