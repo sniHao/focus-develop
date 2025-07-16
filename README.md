@@ -36,7 +36,7 @@ Focus-Develop
 | **springboot-ddd**          | 领域驱动设计, 事件溯源, 六边形架构                   | 复杂业务系统/领域模型项目    |
 | **springboot-ssm**          | 注解式CRUD, 多数据源支持, 轻量级事务控制              | 传统企业级后台管理系统/基础项目 |
 | **spring-cloud-alibaba**    | 基于spring-cloud-alibaba-dependencies实现 | 开箱即用/微服务集群       |
-| **spring-cloud-kubernetes** | 微服务与云原生实践                             | Kubernetes强关联    |
+| **spring-cloud-kubernetes** | 微服务与云原生最佳实践                           | Kubernetes强关联平台  |
 
 > 💡 框架持续扩展计划：uni-app+uView 、Next.js+React等等
 
