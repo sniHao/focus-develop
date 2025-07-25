@@ -17,12 +17,25 @@ spring:
     username: root
     password: JZ8Qrd,ZlkPHs
   elasticsearch:
+    enabled: false # 是否启用 ES
     uris: https://127.0.0.1:9200
     username: elastic
     password: dApslHx5kWWujPdkY3_n
     ssl:
       verification-mode: certificate  # 可选: none, certificate, full
       certificate-authorities: es_key/http_ca.crt  # ES生成的CA证书路径
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        enabled: true
+    sentinel:
+      transport:
+        dashboard: 127.0.0.1:8333
+        port: 8719
+      eager: true
 
 logging:
   level:

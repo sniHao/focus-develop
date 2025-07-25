@@ -32,6 +32,12 @@
             <groupId>com.focus</groupId>
             <artifactId>focus-elasticsearch</artifactId>
         </dependency>
+        
+        <!-- Sentinel 依赖 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
 
     </dependencies>
 

@@ -19,6 +19,31 @@ spring:
     password: JZ8Qrd,ZlkPHs
   elasticsearch:
     enabled: false
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: public
+        group: DEFAULT_GROUP
+        enabled: true
+
+# Dubbo 配置 - 注册到单独的命名空间
+dubbo:
+  application:
+    name: focus-basedata-startup
+  registry:
+    address: nacos://127.0.0.1:8848
+    parameters:
+      namespace: dubbo-group
+      group: DEFAULT_GROUP
+  protocol:
+    name: dubbo
+    port: 20881
+  provider:
+    timeout: 3000
+    retries: 0
+  scan:
+    base-packages: com.focus.basedata.core.remote
 
 # 日志配置
 logging:

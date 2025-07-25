@@ -6,14 +6,6 @@ spring:
     name: focus-demo-startup
   profiles:
     active: @profiles.active@
-  elasticsearch:
-    enabled: true
-    uris: https://localhost:9200
-    username: elastic
-    password: your_password
-    ssl:
-      verification-mode: certificate
-      certificate-authorities: es_key/http_ca.crt
 
 mybatis-plus:
   # 多包名使用
