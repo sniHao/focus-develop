@@ -23,10 +23,10 @@ public class FocusResult<T> implements Serializable {
     private T data;
 
     // 成功响应
-    public static <T> FocusResult<T> success(String msg) {
+    public static <T> FocusResult<T> success() {
         FocusResult<T> focusResult = new FocusResult<>();
         focusResult.setCode(FocusResultCode.SUCCESS.code());
-        focusResult.setMsg(msg);
+        focusResult.setMsg("ok");
         return focusResult;
     }
 
@@ -37,6 +37,7 @@ public class FocusResult<T> implements Serializable {
         focusResult.setData(data);
         return focusResult;
     }
+
     public static <T> FocusResult<T> success(String msg, T data) {
         FocusResult<T> focusResult = new FocusResult<>();
         focusResult.setCode(FocusResultCode.SUCCESS.code());
