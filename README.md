@@ -37,6 +37,7 @@ Focus-Develop
 | **nuxt3-vue3-electron**    | Nuxt3+Vue3+Electron桌面端, NaiveUI组件库, 主题切换, 权限中间件     | 跨平台桌面应用/Web套壳场景 |
 | **springboot-ddd**          | 领域驱动设计, 事件溯源, 六边形架构                   | 复杂业务系统/领域模型项目    |
 | **springboot-ssm**          | 注解式CRUD, 多数据源支持, 轻量级事务控制              | 传统企业级后台管理系统/基础项目 |
+| **springboot-multi-module**  | 多模块三层架构, @FocusLoginUser参数注入 | 多模块架构脚手架/快速搭建后台系统 |
 | **spring-cloud-alibaba**    | 基于spring-cloud-alibaba-dependencies实现 | 开箱即用/微服务集群       |
 | **spring-cloud-kubernetes** | 微服务与云原生最佳实践                           | Kubernetes强关联平台  |
 

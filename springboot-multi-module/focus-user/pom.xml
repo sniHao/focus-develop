@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.focus</groupId>
+        <artifactId>focus-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>focus-user</artifactId>
+    <name>focus-user</name>
+    <description>用户业务模块</description>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- focus-common -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-common</artifactId>
+        </dependency>
+
+        <!-- focus-auth -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-auth</artifactId>
+        </dependency>
+
+        <!-- MapStruct -->
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+        </dependency>
+    </dependencies>
+</project>

@@ -44,6 +44,7 @@ The following table lists the currently implemented framework systems, which are
 | **nuxt3-vue3-electron**    | Nuxt3+Vue3+Electron desktop, NaiveUI components, theme switching, permission middleware | Cross-platform desktop app / Web wrapper                               |
 | **springboot-ddd**          | Domain-driven Design, Event Traceability, Hexagonal Architecture           | Complex Business System/Domain Model Project                            |
 | **springboot-ssm**          | Annotated CRUD, multi-data source support, lightweight transaction control | Traditional enterprise-level background management system/Basic project |
+| **springboot-multi-module**  | Multi-module 3-layer architecture, MapStruct conversion, @FocusLoginUser injection, phone verification login | Multi-module scaffold / rapid backend system setup |
 | **spring-cloud-alibaba**    | Implemented based on spring-cloud-alibaba-dependencies                     | Out-of-the-box/microservice cluster                                     |
 | **spring-cloud-kubernetes** | Best Practices of Microservices and Cloud-native                           | Kubernetes Strongly Associated Platform                                 |
 

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.focus</groupId>
+        <artifactId>focus-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>focus-auth</artifactId>
+    <name>focus-auth</name>
+    <description>认证鉴权模块（登录/登出、Token校验、Sa-Token集成）</description>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- focus-common（已包含 Sa-Token、Web、AOP、Redis 等） -->
+        <dependency>
+            <groupId>com.focus</groupId>
+            <artifactId>focus-common</artifactId>
+        </dependency>
+    </dependencies>
+</project>
