@@ -37,6 +37,57 @@ Focus-Develop
 | npm                              | 10.8.2  | 
 | pnpm                             | 10.6.4  |
 
+## 📚开发文档
+
+### 编码规范
+项目提供了完整的编码规范文档，确保代码质量和团队协作效率：
+
+- **编码规范文档**：`.claude/CODING_STANDARDS.md`
+- **规范检查 Skill**：`.claude/skills/nuxt3-coding-standards.md`
+
+**主要规范包括：**
+- ✅ 环境配置规范（多环境支持）
+- ✅ API 接口开发规范
+- ✅ TypeScript 类型定义规范
+- ✅ Vue 组件开发规范
+- ✅ 页面开发规范
+- ✅ Tailwind CSS 样式规范
+- ✅ Git 提交规范
+
+**使用 Claude Code 进行规范检查：**
+```bash
+# 检查整个项目
+/nuxt3-coding-standards
+
+# 检查特定目录
+/nuxt3-coding-standards api/
+
+# 检查特定文件
+/nuxt3-coding-standards components/user/UserCard.vue
+```
+
+### 环境变量配置
+项目支持多环境配置，通过不同的环境变量文件区分开发和生产环境：
+
+**环境文件：**
+- `.env.dev` - 开发环境配置
+- `.env.pro` - 生产环境配置
+
+**配置示例：**
+```bash
+# API 基础路径
+API_URL=http://your-api-domain.com/
+```
+
+**多环境打包：**
+```bash
+# 开发环境打包
+npm run build:dev
+
+# 生产环境打包
+npm run build:pro
+```
+
 ## 🚴快速开始
 
 ### 🏀克隆项目

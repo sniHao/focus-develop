@@ -20,5 +20,10 @@ logs
 
 # Local env files
 .env
-.env.*
-!.env.example
+.env.local
+# .env*
+# !.env.example
+
+# Claude Code 工作文件（只提交 skills）
+.claude/*
+!.claude/skills/

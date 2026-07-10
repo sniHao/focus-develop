@@ -5,8 +5,25 @@ import type { UseFetchOptions } from 'nuxt/app';
 import { sha256 } from '~/util/sha256';
 import { v4 as uuidv4 } from 'uuid';
 
-const BASE_URL = 'http://127.0.0.1:0509/';
-const SECRET_KEY = 'a05ed3cfc27746dc532405a7bdd75f52c2971ccd9dc520b3c780ce4f4bbdee0b';
+/**
+ * 获取环境变量值
+ * @param key 环境变量键名
+ * @param defaultValue 默认值
+ */
+export function getUrl(key: string, defaultValue?: string) {
+  if (import.meta.server) {
+    return process.env['NUXT_PUBLIC_' + key] || defaultValue;
+  } else {
+    const {
+      public: { [key]: value }
+    } = useRuntimeConfig();
+    return value;
+  }
+}
+
+// 从环境变量读取配置
+const BASE_URL = process.env.API_URL || 'http://127.0.0.1:0509/';
+const SECRET_KEY = getUrl('SECRET_KEY', '');
 /**
  * @description: 服务端渲染请求
  * @param data 请求数据
@@ -110,16 +127,5 @@ requests.interceptors.response.use(
     return error.request;
   }
 );
-
-export function getUrl(key: string, defaultValue?: string) {
-  if (import.meta.server) {
-    return process.env['NUXT_PUBLIC_' + key] || defaultValue;
-  } else {
-    const {
-      public: { [key]: value }
-    } = useRuntimeConfig();
-    return value;
-  }
-}
 
 export default requests;

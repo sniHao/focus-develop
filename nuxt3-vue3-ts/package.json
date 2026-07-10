@@ -3,9 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "dev": "nuxt dev --dotenv .env.dev",
+    "dev:pro": "nuxt dev --dotenv .env.pro",
+    "build": "nuxt build --dotenv .env.dev",
+    "build:dev": "nuxt build --dotenv .env.dev",
+    "build:pro": "nuxt build --dotenv .env.pro",
+    "generate": "nuxt generate --dotenv .env.dev",
+    "generate:dev": "nuxt generate --dotenv .env.dev",
+    "generate:pro": "nuxt generate --dotenv .env.pro",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
